@@ -66,4 +66,158 @@ Deleted branch test (was 8781e64).
 User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)                                       
 $ 
 ```
+### Exercise 2
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)
+$ touch home.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)
+$ git add home.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git stash
+Saved working directory and index state WIP on dev: 8781e64 Created a Hello file
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git stash list
+stash@{0}: WIP on dev: 8781e64 Created a Hello file
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ touch about.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git add about.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git stash
+Saved working directory and index state WIP on dev: 8781e64 Created a Hello file
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ touch team.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git add team.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git stash
+Saved working directory and index state WIP on dev: 8781e64 Created a Hello file
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git stash list
+stash@{0}: WIP on dev: 8781e64 Created a Hello file
+stash@{1}: WIP on dev: 8781e64 Created a Hello file
+stash@{2}: WIP on dev: 8781e64 Created a Hello file
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../.idea/
+        ../manage/
+
+Dropped stash@{1} (3088c691d170033b7b055289b87a5e78f0626c51)
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../.idea/
+        ../manage/
+
+Dropped stash@{1} (04c0af3c2adf34e768896ca9b12a376c2738e3b9)
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git commit -m "Stash popped about and the home pages"
+[dev 8798704] Stash popped about and the home pages
+ 3 files changed, 88 insertions(+)
+ create mode 100644 Gym-Git-Exercise-Solution/about.html
+ create mode 100644 Gym-Git-Exercise-Solution/home.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git push
+fatal: The current branch dev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ it push --set-upstream origin dev
+bash: it: command not found
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git stash pop
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../.idea/
+        ../manage/
+
+Dropped refs/stash@{0} (5cd7aca364cbca0e3b2e806e81a4ec63c18ad1cf)
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git reset --hard
+HEAD is now at 8798704 Stash popped about and the home pages
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git commit -m "Reset the changes of stash popping for tea
+m.html"
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../.idea/
+        ../manage/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (dev)               
+$ git push --set-upstream origin dev
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.42 KiB | 18.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/Reponse2024/Gym-Git-Exercises-Solutions/pull/new/dev
+remote: 
+To https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git
+ * [new branch]      dev -> dev
+branch 'dev' set up to track 'origin/dev'.
+```
+## Bundle 2
+### Exercise 1
+```bash
+
 
