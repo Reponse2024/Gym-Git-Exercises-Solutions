@@ -835,5 +835,126 @@ To https://github.com/Reponse2024/Git-exercise-bundle4-repo.git
 User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)              
 $
 ```
+### Exercise 2
+```bash
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/footer)
+$ touch footer.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/footer)         
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/footer)         
+$ git commit -m "Created a footer file"
+[ft/footer 86db378] Created a footer file
+ 1 file changed, 13 insertions(+)
+ create mode 100644 Gym-Git-Exercise-Solution/footer.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/footer)         
+$ git footer.html
+git: 'footer.html' is not a git command. See 'git --help'.
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/footer)         
+$ git add footer.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/footer)         
+$ git commit -m "Modified footer file"
+[ft/footer 185f8f3] Modified footer file
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/footer)         
+$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/footer)         
+$ git push --set-upstream origin ft/footer
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (12/12), 1.26 KiB | 24.00 KiB/s, done.
+Total 12 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/Reponse2024/Gym-Git-Exercises-Solutions/pull/new/ft/footer
+remote: 
+To https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git
+ * [new branch]      ft/footer -> ft/footer
+branch 'ft/footer' set up to track 'origin/ft/footer'.
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/footer)         
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)              
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/squashing)      
+$ git merge --squash ft/footer
+Updating 5345897..185f8f3
+Fast-forward
+Squash commit -- not updating HEAD
+ Gym-Git-Exercise-Solution/footer.html | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+ create mode 100644 Gym-Git-Exercise-Solution/footer.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/squashing)      
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/squashing)      
+$ git commit -m "footer changes squashing"
+[ft/squashing bb10b0b] footer changes squashing
+ 1 file changed, 13 insertions(+)
+ create mode 100644 Gym-Git-Exercise-Solution/footer.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/squashing)      
+$ git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/squashing
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/squashing)      
+$ git push --set-upstream origin ft/squashing
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 594 bytes | 37.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/Reponse2024/Gym-Git-Exercises-Solutions/pull/new/ft/squashing
+remote: 
+To https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/squashing)      
+$ 
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/squashing)      
+$ git push --set-upstream origin ft/squashing
+```
 
 
