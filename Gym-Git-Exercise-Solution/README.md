@@ -30,7 +30,6 @@ To push the current branch and set the remote as upstream, use
 To have this happen automatically for branches without a tracking
 upstream, see 'push.autoSetupRemote' in 'git help config'.
 
-
 User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/bundle-2)       
 $ git push --set-upstream origin ft/bundle-2
 Enumerating objects: 6, done.
