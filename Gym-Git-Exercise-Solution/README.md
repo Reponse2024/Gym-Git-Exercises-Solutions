@@ -659,4 +659,122 @@ remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
 To https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git
    6e23e68..431f02b  ft/faq-page -> ft/faq-page
 ```
+### Exercise 2
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/faq-page)
+$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        Gym-Git-Exercise-Solution/README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ git  add .
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        Gym-Git-Exercise-Solution/README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ git commit -m "Made some changes"
+[ft/home-page-redesign 02488af] Made some changes
+ 2 files changed, 202 insertions(+)
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)
+$ git add service.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)
+$ git commit -m "Modified serives file"
+[main b58a458] Modified serives file
+ 1 file changed, 2 insertions(+)
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)
+$ git push
+To https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)
+$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ git rebase main
+Auto-merging Gym-Git-Exercise-Solution/service.html
+CONFLICT (content): Merge conflict in Gym-Git-Exercise-Solution/service.html
+error: could not apply 02488af... Made some changes
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+hint: Disable this message with "git config set advice.mergeConflict false"
+Could not apply 02488af... # Made some changes
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign|REBASE 6/6)
+$ git rebase --continue 
+Gym-Git-Exercise-Solution/service.html: needs merge
+You must edit all merge conflicts and then
+mark them as resolved using git add
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign|REBASE 6/6)
+$ git rebase --skip
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ touch home.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ git  add home.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ git commit -m "ft/created a home page"
+[ft/home-page-redesign f0c0e63] ft/created a home page
+ 1 file changed, 13 insertions(+)
+ create mode 100644 Gym-Git-Exercise-Solution/home.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ git push
+fatal: The current branch ft/home-page-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/home-page-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (ft/home-page-redesign)
+$ git push --set-upstream origin ft/home-page-redesign
+Enumerating objects: 31, done.
+Counting objects: 100% (31/31), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (27/27), done.
+Writing objects: 100% (27/27), 2.87 KiB | 49.00 KiB/s, done.
+Total 27 (delta 11), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (11/11), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/Reponse2024/Gym-Git-Exercises-Solutions/pull/new/ft/home-page-redesign
+remote: 
+To https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
+
+```
 
