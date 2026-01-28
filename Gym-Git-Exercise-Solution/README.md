@@ -777,4 +777,63 @@ To https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git
 branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
 
 ```
+## Bundle 4
+### Exercise 1
+```bash
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)
+$ git remote add git-copy https://github.com/Reponse2024/Git-exercise-bundle4-repo.git
+error: remote git-copy already exists.
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)
+$ git remote add git-copyy https://github.com/Reponse2024/Git-exercise-bundle4-repo.git
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)              
+$ git remote -v
+git-copy        https://github.com/Reponse2024/Git-Exercise-Solution-Bundle4-Repo.git (fetch)
+git-copy        https://github.com/Reponse2024/Git-Exercise-Solution-Bundle4-Repo.git (push)
+git-copyy       https://github.com/Reponse2024/Git-exercise-bundle4-repo.git (fetch)
+git-copyy       https://github.com/Reponse2024/Git-exercise-bundle4-repo.git (push)
+origin  https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git (fetch)
+origin  https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git (push)
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)              
+$ touch home.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)              
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)              
+$ git commit -m "Update the home page content"
+[main 5345897] Update the home page content
+ 1 file changed, 13 insertions(+)
+ create mode 100644 Gym-Git-Exercise-Solution/home.html
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)              
+$ git push origin main
+To https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Reponse2024/Gym-Git-Exercises-Solutions.git'                   
+hint: Updates were rejected because the remote contains work that you do not                                          
+hint: have locally. This is usually caused by another repository pushing to                                           
+hint: the same ref. If you want to integrate the remote changes, use                                                  
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.                                            
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)              
+$ git push git-copyy main
+Enumerating objects: 67, done.
+Counting objects: 100% (67/67), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (58/58), done.
+Writing objects: 100% (67/67), 9.96 KiB | 113.00 KiB/s, done.
+Total 67 (delta 21), reused 3 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (21/21), done.
+To https://github.com/Reponse2024/Git-exercise-bundle4-repo.git
+ * [new branch]      main -> main
+
+User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)              
+$
+```
+
 
