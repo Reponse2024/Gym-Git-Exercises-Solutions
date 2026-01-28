@@ -1,7 +1,6 @@
 # Git Exercises
 ## Bundle 2
 ### Exercise 2
-
 ```bash
 
 User@DESKTOP-PQL5SE4 MINGW64 ~/IdeaProjects/Gym-Git-Exercises-Solutions/Gym-Git-Exercise-Solution (main)
